@@ -7,11 +7,13 @@
 using namespace std;
 int main ()
 {
-	float point[30], appp;
-	int ch;
+	int ch, n;
+	float point[n], appp, bestappp, bestgrad;
+	cout<<"quanti sono i candidati?"<<endl;
+	cin>>n;
 	bool change;
-	string name[30], appn, control, control_name;
-	for (int i=0; i<=29; i++)
+	string name[n], appn, control, control_name, bestappn, status;
+	for (int i=0; i<=n-1; i++)
 	{
 		cout<<"inserisci il NOME del "<<i+1<<"° candidato: "<<endl;
 		cin>>name[i];
@@ -32,7 +34,7 @@ int main ()
 				do 
 				{
 					change=false;
-					for (int i=0; i<=29; i++) 
+					for (int i=0; i<=n-1; i++) 
 					{
 						if (point[i]<point[i+1]) 
 						{
@@ -47,7 +49,7 @@ int main ()
 					}
 				} 
 				while (change);
-				for (int i=0; i<=29; i++)
+				for (int i=0; i<=n-1; i++)
 				{
 					cout<<i+1<<"° - NAME: "<<name[i]<<" SCORE: "<<point[i]<<endl;
 				}
@@ -56,7 +58,7 @@ int main ()
 				do 
 				{
 					change=false;
-					for (int i=0; i<=29; i++) 
+					for (int i=0; i<=n-1; i++) 
 					{
 						if (name[i]<name[i+1]) 
 						{
@@ -71,7 +73,7 @@ int main ()
 					}
 				} 
 				while (change);
-				for (int i=0; i<=29; i++)
+				for (int i=0; i<=n-1; i++)
 					{
 						cout<<"NAME: "<<name[i]<<" SCORE: "<<point[i]<<endl;
 					}
@@ -101,9 +103,23 @@ int main ()
 				{
 					if (name[i]==control)
 					{
-						cout<<i+1<<"°  NAME: "<<name[i]<<" SCORE: "<<point[i]<<endl;
+						bestappn=name[i];
+						bestappp=point[i];
+						bestgrad=i+1;
 					}
 				}
+				if (bestgrad<=30)
+				{
+					status="AMMESSO ALLA SPECIALIZZAZIONE";
+				}
+				else
+				{
+					status="NON AMMESSO ALLA SPECIALIZZAZIONE";
+				}
+				cout<<"GRADO: "<<bestgrad<<endl;
+				cout<<"NAME: "<<bestappn<<endl;
+				cout<<"POINT: "<<bestappp<<endl;
+				cout<<"STATUS: "<<status<<endl;
 				break;
 			case 4:
 				cout<<"CHIUSURA CONFERMATA"<<endl;
