@@ -60,7 +60,7 @@ int main ()
 					change=false;
 					for (int i=0; i<=n-1; i++) 
 					{
-						if (name[i]<name[i+1]) 
+						if (name[i]>name[i+1]) 
 						{
 						appp=point[i];
 						point[i]=point[i+1];
@@ -82,7 +82,7 @@ int main ()
 				do 
 				{
 					change=false;
-					for (int i=0; i<=29; i++) 
+					for (int i=0; i<=n-1; i++) 
 					{
 						if (point[i]<point[i+1]) 
 						{
@@ -99,7 +99,7 @@ int main ()
 				while (change);
 				cout<<"INSERISCI IL NOME DELLA PERSONA DA CONTROLLARE: "<<endl;
 				cin>>control;
-				for (int i=0; i<=29; i++)
+				for (int i=0; i<=n-1; i++)
 				{
 					if (name[i]==control)
 					{
