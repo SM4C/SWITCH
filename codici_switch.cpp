@@ -2,7 +2,6 @@
 //Costruire un programma che, attraverso menù, risponda ai seguenti quesiti:
 //Elencare i codici dei prodotti la cui quantità è superiore alla media
 //Visualizzare il codice del prodotto che è stato realizzato in quantità minore (i codici nel caso ce ne sia più di uno fabbricato in quantità minima).
-//ci sono
 #include <iostream>
 using namespace std;
 int main ()
@@ -11,11 +10,10 @@ int main ()
 	cout<<"Inserisci N prodotto: ";
 	cin>>n;
 	string code[n], codeapp;
-	int qt[n], tot=0, avg, minq=INT_MAX; //puoi anche usare INT_MAX; è ugale vabbe... domadna sai cosa significa quello tra parentesi nel case 2? non riesco a capire cosa mi chieda
-	for(int i=0;i<n;i++){
+	int qt[n], tot=0, avg, minq=INT_MAX;
 		cout<<"Inserisci codice: ";
 		cin>>code[i];
-		cout<<"Inserisci quantita: ";
+		cout<<"Inserisci quantità: ";
 		cin>>qt[i];
 		tot=tot+qt[i];
 	}
