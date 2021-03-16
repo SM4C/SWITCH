@@ -25,13 +25,14 @@ int main ()
 		cout<<"2 - VISUALIZZARE I CODICI DEL PRODOTTO CHE E' STATO REALIZZATO IN QUANTITA MINORE"<<endl;
 		cout<<"3 - ESCI"<<endl;
 		cout<<"Inserisci una scelta: ";
+		cout<<endl;
 		cin>>ch;
 		cout<<endl;
 		switch(ch){
 			case 1:
 			for(int i=0;i<n;i++){
 				if(qt[i]>avg){
-					cout<<code[i]<<endl;
+					cout<<"CODICE: "<<code[i]<<endl;
 				}
 			}
 			break;
