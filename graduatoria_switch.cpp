@@ -20,7 +20,7 @@ int main ()
 		cout<<"inserisci i PUNTI del "<<i+1<<"° candidato: "<<endl;
 		cin>>point[i];
 	}
-	do 
+	do
 	{
 		cout<<endl;
 		cout<<"1 - VISUALIZZA GRADUATORIA"<<endl;
@@ -31,12 +31,12 @@ int main ()
 		switch (ch)
 		{
 			case 1:
-				do 
+				do
 				{
 					change=false;
-					for (int i=0; i<=n-1; i++) 
+					for (int i=0; i<=n-1; i++)
 					{
-						if (point[i]<point[i+1]) 
+						if (point[i]<point[i+1])
 						{
 							appp=point[i];
 							point[i]=point[i+1];
@@ -47,7 +47,7 @@ int main ()
 							change=true;
 						}
 					}
-				} 
+				}
 				while (change);
 				for (int i=0; i<=n-1; i++)
 				{
@@ -55,12 +55,12 @@ int main ()
 				}
 				break;
 			case 2:
-				do 
+				do
 				{
 					change=false;
-					for (int i=0; i<=n-1; i++) 
+					for (int i=0; i<=n-1; i++)
 					{
-						if (name[i]>name[i+1]) 
+						if (name[i]>name[i+1])
 						{
 						appp=point[i];
 						point[i]=point[i+1];
@@ -71,7 +71,7 @@ int main ()
 						change=true;
 						}
 					}
-				} 
+				}
 				while (change);
 				for (int i=0; i<=n-1; i++)
 					{
@@ -79,12 +79,12 @@ int main ()
 					}
 				break;
 			case 3:
-				do 
+				do
 				{
 					change=false;
-					for (int i=0; i<=n-1; i++) 
+					for (int i=0; i<=n-1; i++)
 					{
-						if (point[i]<point[i+1]) 
+						if (point[i]<point[i+1])
 						{
 							appp=point[i];
 							point[i]=point[i+1];
@@ -95,7 +95,7 @@ int main ()
 							change=true;
 						}
 					}
-				} 
+				}
 				while (change);
 				cout<<"INSERISCI IL NOME DELLA PERSONA DA CONTROLLARE: "<<endl;
 				cin>>control;
