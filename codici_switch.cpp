@@ -11,7 +11,8 @@ int main ()
 	cin>>n;
 	string code[n], codeapp;
 	int qt[n], tot=0, avg, minq=INT_MAX; 
-	for(int i=0;i<n;i++){
+	for(int i=0;i<n;i++)
+	{
 		cout<<"Inserisci codice: ";
 		cin>>code[i];
 		cout<<"Inserisci quantità: ";
@@ -25,15 +26,20 @@ int main ()
 		cout<<"1 - ELENCARE I CODICI DEI PRODOTTI SUPERIORE ALLA MEDIA"<<endl;
 		cout<<"2 - VISUALIZZARE I CODICI DEL PRODOTTO CHE E' STATO REALIZZATO IN QUANTITA MINORE"<<endl;
 		cout<<"3 - ESCI"<<endl;
-		cout<<"Inserisci una scelta: ";
+		cout<<"Inserisci una scelta: "<<endl;
+		cout<<endl;
 		cin>>ch;
 		cout<<endl;
-		switch(ch){
+		switch(ch)
+		{
 			case 1:
-			for(int i=0;i<n;i++){
-				if(qt[i]>avg){
+			for(int i=0;i<n;i++)
+			{
+				if(qt[i]>avg)
+					{
 					cout<<code[i]<<endl;
-				}
+					cout<<"CODICE: "<<code[i]<<endl;
+					}	
 			}
 			break;
 			case 2:
