@@ -1,12 +1,99 @@
 //Una ditta vende un certo articolo e registra in due vettori, CLIENTI e QTA, i nomi dei clienti che hanno acquistato tale articolo e le rispettive quantità acquistate.
 //Creare un programma a menù che, dopo aver riempito i due vettori, consenta le seguenti opzioni
-
 //1)Registra un acquisto: inserito da tastiera il nome di un cliente si deve aggiungere alla quantità da lui già acquistata una nuova quantità inserita da tastiera. 
-Visualizzare un messaggio se il cliente inserito non è presente nel vettore.
-
+//Visualizzare un messaggio se il cliente inserito non è presente nel vettore.
 //2)Visualizza i nomi dei clienti e le quantità acquistate in ordine di quantità decrescente.
-
 //3)Creare un nuovo vettore che contenga i nomi dei clienti che hanno acquistato una quantità superiore a un valore inserito. 
 //Visualizzare in ordine alfabetico i nomi dei clienti contenuti nel nuovo vettore.
-
 //4)Visualizzare in ordine alfabetico i nomi dei clienti che hanno acquistato la minima quantità. Visualizzare anche quanti sono tali clienti.
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int n;
+	bool change;
+	cout<<"quanti sono i clienti?"<<endl;
+	cin>>n;
+	int qta[n], ch, va,newimport, appq, min=INT_MAX, k=0;
+	string client[n], search, appc;
+	for (int i=0; i<=n-1; i++)
+	{
+		cout<<"Nome cliente: "<<endl;
+		cin>>client[i];
+		cout<<"Quantità: "<<endl;
+		cin>>qta[i];
+	}
+	do 
+	{
+		cout<<endl;
+		cout<<"1)Registra un acquisto: inserito da tastiera il nome di un cliente si deve aggiungere alla quantità da lui già acquistata una nuova quantità inserita da tastiera. "<<endl;
+		cout<<"2)Visualizza i nomi dei clienti e le quantità acquistate in ordine di quantità decrescente."<<endl;
+		cout<<"3)Creare un nuovo vettore che contenga i nomi dei clienti che hanno acquistato una quantità superiore a un valore inserito. "<<endl;
+		cout<<"4)Visualizzare in ordine alfabetico i nomi dei clienti che hanno acquistato la minima quantità. Visualizzare anche quanti sono tali clienti."<<endl;
+		cout<<"5)EXIT"<<endl;
+		switch (ch)
+		{
+			case 1:
+				cout<<"inserisci il nome: "<<endl;
+				cin>>search;
+				cout<<"inserisci il nuovo importo da sommare"<<endl;
+				cin>>newimport;
+				for (int i=0; i<=n-1; i++)
+				{
+					if (client[i]==search)
+					{
+						qta[i]=qta[i]+newimport;
+						cout<<"NAME:       "<<client[i]<<"QUNATITÀ AGGIORNATA:       "<<qta[i]<<endl;
+					}
+				}
+				break;
+			case 2:
+				do
+				{
+					change=false;
+					for (int i=0; i<=n-1; i++)
+					{
+						if (qta[i]>qta[i+1])
+						{
+							appq=qta[i];
+							qta[i]=qta[i+1];
+							qta[i+1]=appq;
+							appc=client[i];
+							client[i]=client[i+1];
+							client[i+1]=appc;
+							change=true;
+						}
+					}
+				} 
+				while (change);
+				for (int i=0; i<=n-1; i++)
+				{
+					cout<<"NAME:       "<<client[i]<<"QUNATITÀ:       "<<qta[i]<<endl;
+				}
+				break;
+			case 3:
+				cout<<"inserisci il valore di controllo: "<<endl;
+				cin>>newimport;
+				for (int i=0; i<=n-1; i++)
+				{
+					if (qta[i]>=newimport) 
+					{
+						cout<<"NAME:       "<<client[i]<<"QUNATITÀ:       "<<qta[i]<<endl;
+					}
+				}
+				break;
+			case 4:
+				cout<<"cazzo ne so"<<endl;
+				break;
+			case 5:
+				cout<<"vaffanculo e ciao"<<endl;
+				break;
+			default:
+				cout<<"errore"<<endl;
+				break;
+		}
+	} 
+	while (ch!=5);
+	system ("pause");
+	return 0;
+}
