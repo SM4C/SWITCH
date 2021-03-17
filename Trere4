@@ -1,0 +1,13 @@
+ Riempire i vettori ARTICOLI e PREZZI con un numero di elementi a piacere
+
+Creare un programma a menu che consenta le seguenti funzioni..
+
+1)     Inserito un articolo modifica il prezzo con valore inserito da tastiera, visualizza un  messaggio se l’articolo non c’è.
+
+2)     Calcola prezzo medio degli articoli il cui prezzo è superiore a un valore inserito da tastiera.
+
+3)     Stampa articoli che hanno prezzo minimo, indicando anche quanti sono tali articoli.
+
+4)     Stampa articoli e prezzi in ordine di prezzo decrescente.
+
+5)     Stampa in ordine alfabetico i codici degli articoli che hanno prezzo compreso tra 10 e 20 estremi inclusi. Messaggio se non ce ne sono.
