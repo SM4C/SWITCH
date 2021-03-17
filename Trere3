@@ -1,0 +1,9 @@
+Creare un programma a menu che, dopo aver memorizzato i nomi di N stati e i rispettivi numeri di abitanti e le rispettive superfici in Km quadrati, consenta le seguenti attività:
+
+1.     Visualizzare i nomi degli stati e i rispettivi numeri di abitanti secondo l’ordine alfabetico dei nomi
+
+2.     Visualizzare i nomi degli stati e le rispettive superfici secondo l’ordine decrescente delle superfici.
+
+3.     Visualizzare i nomi degli stati e le rispettive densità di abitanti per Km quadrato in ordine di densità di abitanti crescente.
+
+4.     Modifica il numero di abitanti di un dato stato con un nuovo valore inserito in input. Visualizza un messaggio se lo stato non è presente tra quelli memorizzati.
