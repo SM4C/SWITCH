@@ -1,0 +1,16 @@
+//Si vuole visualzzare il listino prezzi di un’azienda. Dopo aver registrato i codici degli articoli, le descrizioni e i prezzi unitari si deve creare un programma a menu 
+//che consenta le seguenti funzioni:
+
+//1.     Visualizzare il listino in ordine di codice
+
+//2.     Visualizzare il listino in ordine di descrizione
+
+//3.     Visualizzare il listino in ordine di prezzo
+
+//4.     Visualizzare la descrizione degli articoli che hanno prezzo massimo.
+
+//5.     Modificare il prezzo di un articolo di cui si inserisce il codice. Visualizzare un messaggio se l’articolo non c’è.
+
+//6.     Visualizzare in ordine di prezzo decrescente la descrizione e il prezzo degli articoli che hanno prezzo unitario compreso tra due valori inseriti in input.
+
+//7.     Visualizzare il prezzo medio degli articoli il cui codice inizia con la lettera E
