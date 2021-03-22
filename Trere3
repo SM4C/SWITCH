@@ -1,9 +1,144 @@
-Creare un programma a menu che, dopo aver memorizzato i nomi di N stati e i rispettivi numeri di abitanti e le rispettive superfici in Km quadrati, consenta le seguenti attività:
+//Creare un programma a menu che, dopo aver memorizzato i nomi di N stati e i rispettivi numeri di abitanti e le rispettive superfici in Km quadrati, consenta le seguenti attività:
+//1.     Visualizzare i nomi degli stati e i rispettivi numeri di abitanti secondo l’ordine alfabetico dei nomi
+//2.     Visualizzare i nomi degli stati e le rispettive superfici secondo l’ordine decrescente delle superfici.
+//3.     Visualizzare i nomi degli stati e le rispettive densità di abitanti per Km quadrato in ordine di densità di abitanti crescente.
+//4.     Modifica il numero di abitanti di un dato stato con un nuovo valore inserito in input. Visualizza un messaggio se lo stato non è presente tra quelli memorizzati.
 
-1.     Visualizzare i nomi degli stati e i rispettivi numeri di abitanti secondo l’ordine alfabetico dei nomi
+#include <iostream>
+using namespace std;
+int main ()
+{
+	int n;
+	bool change;
+	cout<<"quanti sono gli stati?"<<endl;
+	cin>>n;
+	string name[n], appn, control;
+	int abi[n], ch, appa, k;
+	float sup[n], apps, density[n], appd;
+	for (int i=0; i<=n-1; i++)
+	{
+		cout<<"inserisci il nome del "<<i+1<<"° stato"<<endl;
+		cin>>name[i];
+		cout<<"inserisci il numero di abitanti del "<<i+1<<"° stato"<<endl;
+		cin>>abi[i];
+		cout<<"inserisci la superficie (in Km2 "<<i+1<<"° stato"<<endl;
+		cin>>sup[i];
+	}
+	do 
+	{
+		cout<<endl;
+		cout<<"1 - Visualizzare i nomi degli stati e i rispettivi numeri di abitanti secondo l’ordine alfabetico dei nomi"<<endl;
+		cout<<"2 - Visualizzare i nomi degli stati e le rispettive superfici secondo l’ordine decrescente delle superfici"<<endl;
+		cout<<"3 - Visualizzare i nomi degli stati e le rispettive densità di abitanti per Km quadrato in ordine di densità di abitanti crescente"<<endl;
+		cout<<"4 - Modifica il numero di abitanti di un dato stato con un nuovo valore inserito in input. Visualizza un messaggio se lo stato non è presente tra quelli memorizzati"<<endl;
+		cout<<"5 - EXIT"<<endl;
+		switch (ch)
+		{
+			case 1:
+				//1 - Visualizzare i nomi degli stati e i rispettivi numeri di abitanti secondo l’ordine alfabetico dei nomi
+				do 
+				{
+					change=false;
+					for (int i=0; i<=n-1; i++)
+					{
+						if (name[i]<name[i+1])
+						{
+							appn=name[i];
+							name[i]=name[i+1];
+							name[i+1]=appn;
+							appa=abi[i];
+							abi[i]=abi[i+1];
+							abi[i+1]=appa;
+							change=true;
+						}
+					}
+				} 
+				while (change);
+				for (int i=0; i<=n-1; i++)
+				{
+					cout<<"STATE: "<<name[i]<<"   INHABITANTS: "<<abi[i]<<endl;
+				}
+				break;
+			case 2:
+				//2 - Visualizzare i nomi degli stati e le rispettive superfici secondo l’ordine decrescente delle superfici
+				do
+				{
+					change=false;
+					for (int i=0; i<=n-1; i++)
+					{
+						if (sup[i]<sup[i+1])
+						{
+							appn=name[i];
+							name[i]=name[i+1];
+							name[i+1]=appn;
+							apps=sup[i];
+							sup[i]=sup[i+1];
+							sup[i+1]=apps;
+							change=true;
+						}
+					}
+				} 
+				while (change);
+				for (int i=0; i<=n-1; i++)
+				{
+					cout<<"STATE: "<<name[i]<<"   SURFACE: "<<sup[i]<<endl;
+				}
+				break;
+			case 3:
+				//3 - Visualizzare i nomi degli stati e le rispettive densità di abitanti per Km quadrato in ordine di densità di abitanti crescente
+				for (int i=0; i<=n-1; i++)
+				{
+					density[i]=abi[i]/sup[i];
+				}
+				do 
+				{
+					change=false;
+					for (int i=0; i<=n-1; i++) 
+					{
+						if (density[i]>density[i+1]) 
+						{
+							appd=density[i];
+							density[i]=density[i+1];
+							density[i+1]=appd;
+							appn=name[i];
+							name[i]=name[i+1];
+							name[i+1]=appn;
+							change=true;
+						}
+					}
+				} 
+				while (change);
+				for (int i=0; i<=n-1; i++)
+				{
+					cout<<"NAME: "<<name[i]<<"   DENSITY: "<<density[i]<<endl;
+				}
+				break;
+			case 4:
+				//4 - Modifica il numero di abitanti di un dato stato con un nuovo valore inserito in input
+				cout<<"inserisci il valore di controllo"<<endl;
+				cin>>control;
+				cout<<endl;
+				for (int i=0; i<=n-1; i++)
+				{
+					if (name[i]==control) 
+					{
+						cout<<"FOUND!"<<endl;
+						cout<<"inserisci il valore da cambiare"<<endl;
+						cin>>k;
+						abi[i]=k;
+					}
+				}
+				break;
+			case 5:
+				cout<<"chiusura programma"<<endl;
+				break;
+			default:
+				cout<<"errore"<<endl;
+				break;
+		}
+	} 
+	while (ch!=5);
+	system ("pause");
+	return 0;
+}
 
-2.     Visualizzare i nomi degli stati e le rispettive superfici secondo l’ordine decrescente delle superfici.
-
-3.     Visualizzare i nomi degli stati e le rispettive densità di abitanti per Km quadrato in ordine di densità di abitanti crescente.
-
-4.     Modifica il numero di abitanti di un dato stato con un nuovo valore inserito in input. Visualizza un messaggio se lo stato non è presente tra quelli memorizzati.
