@@ -48,7 +48,7 @@ int main ()
 				{
 					if (stip[i]==maxs)
 					{
-						cout<<i<<endl;
+						cout<<i+1<<endl;
 					}
 				}
 				break;
